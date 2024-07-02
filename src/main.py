@@ -4,17 +4,9 @@ Date: 2024-06-28
 """
 
 import cv2
-import numpy as np
 from video_player import VideoPlayer
 from object_detector import ObjectDetector
-
-ZONE_POLYGON = np.array([
-    [0.73, 0.35],    # Sol üst köşe
-    [0.73, 0.35],    # Sağ üst köşe
-    [0.7, 1],    # Sağ alt köşe
-    [0.5, 1]     # Sol alt köşe
-])
-
+from zone_polygons import get_human_zone_polygon
 
 def main():
     """
@@ -27,7 +19,7 @@ def main():
     frame_width = int(video_player.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(video_player.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-    object_detector = ObjectDetector(model_path, ZONE_POLYGON, (frame_width, frame_height))
+    object_detector = ObjectDetector(model_path, get_human_zone_polygon(), (frame_width, frame_height))
 
     while video_player.is_opened():
         ret, frame = video_player.read_frame()
