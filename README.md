@@ -21,7 +21,7 @@ This project implements an object detection system using the YOLOv8 model. It in
 
 1. Clone the repository (Depoyu klonlayın):
    ```bash
-   git clone https://github.com/enescanerkan/YOLOv8_Object_Detection.git
+   git clone https://github.com/enescanerkan/yolov8-entry-zone-counter.git
 
 
 ![image](https://github.com/enescanerkan/YOLOv8_Object_Detection/assets/154825118/845114d2-13ae-4f13-b34a-d8cd7113c40e)
